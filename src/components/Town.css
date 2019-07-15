@@ -1,0 +1,16 @@
+.block {
+    background-color: #B2DBD5;
+    height: 100px;
+    margin-bottom: 5px;
+    width: 180px;
+    margin-left: 0px;
+}
+
+
+.list {
+    background-color: #006C84;
+    height: 350px;
+    width: 180px;
+    text-align: center;
+    margin-bottom: 50px;
+}
