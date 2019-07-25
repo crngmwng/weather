@@ -1,9 +1,5 @@
 .footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(199, 223, 212);
-    height: 30px;
-    padding-top: 10px;
- }
+    background-color: rgb(190, 213, 238);
+    padding-top: 13px; 
+    height: 50px;
+}

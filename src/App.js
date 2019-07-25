@@ -1,8 +1,10 @@
 import React from 'react';
-import { Route, HashRouter, Switch } from 'react-router-dom'
+import { Route, HashRouter, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home.js'
-import TownInDetail from './components/TownInDetail';
+import Home from './components/Home.js';
+import TownInDetail from './components/TownInDetail.js';
+import About from './components/About.js';
+import Contacts from './components/Contacts.js';
 
 const  App = () => {
   return (
@@ -10,8 +12,9 @@ const  App = () => {
         <div>
           <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/town1" component={Home} />
-          <Route path="/t" component={TownInDetail} />
+          <Route path="/townsvea1" component={TownInDetail} />
+          <Route path="/about" component={About} />
+          <Route path="/contacts" component={Contacts} />
           </Switch>
         </div>
       </HashRouter>

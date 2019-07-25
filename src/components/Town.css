@@ -1,6 +1,6 @@
 .block {
     background-color: #B2DBD5;
-    height: 100px;
+    height: 90px;
     margin-bottom: 5px;
     width: 180px;
     margin-left: 0px;
@@ -9,8 +9,8 @@
 
 .list {
     background-color: #006C84;
-    height: 350px;
+    height: 320px;
     width: 180px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }

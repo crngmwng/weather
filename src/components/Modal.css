@@ -11,7 +11,7 @@
   position:fixed;
   background: white;
   width: 550px;
-  height: 300px;
+  height: 200px;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
@@ -32,7 +32,7 @@
 
 main {
   background-color: #006C84;
-  height: 350px;
+  height: 320px;
   width: 180px;
   text-align: center;
   padding-top: 130px;

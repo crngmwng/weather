@@ -9,7 +9,7 @@ const Modal = ({ handleClose, show, children }) => {
         <section className="modal-main">
             {children}
           <footer className="border-top"> 
-            <button className="closebutton" onClick={handleClose}>close</button>
+            <button className="closebutton btn btn-outline-secondary" onClick={handleClose}>close</button>
           </footer>
         </section>
       </div>

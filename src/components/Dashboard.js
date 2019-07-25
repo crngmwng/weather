@@ -23,12 +23,12 @@ class Dashboard extends Component {
             <header className="border-bottom">Choose another town</header>
               <div className="d-flex"> 
                 {this.state.towns.map((town, i) =>
-                  <Link to="/t" key={i}>{town}</Link>
+                  <Link to={`/${town}`} key={i}>{town}</Link>
                 )
               }
               </div>
           </Modal>
-              <button type="button" onClick={this.showModal}>
+              <button type="button" className="btn btn-light" onClick={this.showModal}>
                 open
               </button>
         </main>
