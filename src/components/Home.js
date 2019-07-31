@@ -40,23 +40,16 @@ import { arrayExpression } from '@babel/types';
 // ]
 
 
-const catchNames = () => {
-    fetch('https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22')
-    .then(res => console.log(res.json()))
-}
+let towns = ["Sudak", "Feodosiya", "Kerch", "Yalta"];
+let townslist = [];
 
-catchNames()
-
-// Access to fetch at 'https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22'
-// from origin 'http://localhost:3000' has been blocked by CORS policy: 
-// No 'Access-Control-Allow-Origin' header is present on the requested resource.
-// If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-
-// Uncaught (in promise) TypeError: Failed to fetch
-
-
-
-
+towns.map( town => {
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+    .then(res => res.json())
+    .then(json => townslist.push(json))
+    return townslist
+    }
+);
 
 const Home = () => {
     return(
@@ -65,9 +58,9 @@ const Home = () => {
                 <Jumbotron title='Welcome' subtitle="Hello"/>
 
                 <div className="home-container">
-                    {/* <Container>
-                        <Townslist towns={towns} />
-                    </Container> */}
+                    <Container>
+                        <Townslist townslist={townslist} />
+                    </Container>
                 </div>  
                     <Footer />
             </div>
