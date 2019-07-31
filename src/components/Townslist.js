@@ -3,9 +3,9 @@ import Town from './Town.js';
 import Dashboard from './Dashboard.js'
 
 const Townslist = ({ townslist=[] }) => {
-    console.log(townslist);
     return(
-            <div className="d-flex justify-content-around flex-wrap">
+        <div className="d-flex justify-content-around flex-wrap">
+                {console.log(townslist)}
                 {townslist.map(town =>                     
                     <Town key={town.data.city_name}
                     {...town} />
