@@ -46,16 +46,11 @@ let townslist = new Object();
 towns.map( town => {
     fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => console.log(Object.keys(json)));
+    .then(json => console.log(Object.keys(json[0])));
     }
 );
 
-// Array(2)
-// 0: "data"1: 
-// "count"
-// length: 2
-// __proto__: Array(0)
-
+// Unhandled Rejection (TypeError): Cannot convert undefined or null to object
 
 console.log(Object.keys(townslist))
 
