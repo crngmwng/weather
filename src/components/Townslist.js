@@ -2,16 +2,15 @@ import React from 'react';
 import Town from './Town.js';
 import Dashboard from './Dashboard.js'
 
-const Townslist = ({ townslist=[] }) => {
+const Townslist = ({ townslist={}, towns=[] }) => {
     return(
-        <div className="d-flex justify-content-around flex-wrap">
-                {console.log(townslist)}
-                {townslist.map((town, key) =>                     
-                    <Town key={town.data.city_name}
-                    {...town} />
+        <div className="d-flex justify-content-around flex-wrap">                  
+                {towns.map((town, key) =>
+                    <Town key={[town.data.city_name]}
+                    town={townslist[town]} />
                     )
                 }
-                            <Dashboard />
+                    <Dashboard />
             </div>
     )
 }

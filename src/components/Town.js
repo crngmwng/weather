@@ -8,13 +8,13 @@ const Town = (props) => {
     return (
             <div className="list" ><Link to={`/${props.title}`}>{props.title} </Link>
                 <div className="row block align-items-center"> 
-                    <Col>{props.app_temp}</Col>
+                    <Col></Col>
                 </div>
                 <div className="row block align-items-center"> 
-                    <Col>{props.data.wind_spd}</Col>
+                    <Col></Col>
                 </div>
                 <div className="row block align-items-center"> 
-                    <Col>{props.data.clouds}</Col>
+                    <Col></Col>
                 </div>
             </div>
     )

@@ -40,16 +40,18 @@ import { arrayExpression } from '@babel/types';
 // ]
 
 
-let towns = ["Sudak", "Feodosiya", "Kerch", "Yalta"];
-let townslist = [];
+let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
+let townslist = new Object();
 
 towns.map( town => {
     fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => townslist.push(json))
-    return townslist
+    .then(json => townslist[`${town}`] = json);
     }
 );
+
+console.log(townslist)
+
 
 const Home = () => {
     return(
@@ -59,7 +61,7 @@ const Home = () => {
 
                 <div className="home-container">
                     <Container>
-                        <Townslist townslist={townslist} />
+                        <Townslist townslist={townslist} towns={towns} />
                     </Container>
                 </div>  
                     <Footer />
