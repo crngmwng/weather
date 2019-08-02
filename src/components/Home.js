@@ -43,25 +43,12 @@ import { arrayExpression } from '@babel/types';
 let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
 let townslist = new Object();
 
-towns.map( town => {
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+
+    fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => console.log(Object.keys(json[0])));
-    }
-);
+    .then(json => console.log(Object.keys(json)))
 
-// Unhandled Rejection (TypeError): Cannot convert undefined or null to object
-
-console.log(Object.keys(townslist))
-
-// []
-// length: 0__proto__: Array(0)
-
-
-for (let key in townslist) {
-    console.log(townslist[key]);
-    console.log(key);
-}
+    // (2) ["data", "count"]
 
 const Home = () => {
     return(
