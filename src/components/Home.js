@@ -50,9 +50,15 @@ towns.map( town => {
     }
 );
 
+console.log(Object.keys(townslist))
+
+// []
+// length: 0__proto__: Array(0)
+
 
 for (let key in townslist) {
     console.log(townslist[key]);
+    console.log(key);
 }
 
 const Home = () => {
