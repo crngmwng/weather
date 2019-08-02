@@ -50,6 +50,27 @@ towns.map(town => {
     }
 )
 
+console.log(townslist)
+
+// []
+// 0: Array(1)
+// 0: {rh: 62, pod: "d", lon: 34.97471, pres: 1009.44, timezone: "Europe/Simferopol", …}
+// length: 1
+// __proto__: Array(0)
+// 1: Array(1)
+// 0: {rh: 44, pod: "d", lon: 37.27365, pres: 1008, timezone: "Europe/Kiev", …}
+// length: 1
+// __proto__: Array(0)
+// 2: Array(1)
+// 0: {rh: 41, pod: "d", lon: 36.47429, pres: 1003.55, timezone: "Europe/Simferopol", …}
+// length: 1
+// __proto__: Array(0)
+// 3: Array(1)
+// 0: {rh: 60, pod: "d", lon: 35.37789, pres: 1000.53, timezone: "Europe/Simferopol", …}
+// length: 1
+// __proto__: Array(0)
+// length: 4
+// __proto__: Array(0)
 
 console.log(Object.keys(townslist));
 
