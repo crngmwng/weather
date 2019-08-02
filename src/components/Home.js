@@ -41,16 +41,22 @@ import { arrayExpression } from '@babel/types';
 
 
 let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
-let townslist = new Object();
+let townslist = [];
 
-
-    fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
+towns.map(town => {
+    fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => console.log(json.data))
+    .then(json => townslist.push(json.data));
+    }
+)
 
-    // Array(1)
-    // 0: {rh: 60, pod: "d", lon: 34.97471, pres: 1009.87, timezone: "Europe/Simferopol", …}
-    // length: 1
+
+console.log(Object.keys(townslist));
+
+// []
+// length: 0
+// __proto__: Array(0)
+
 
 const Home = () => {
     return(
