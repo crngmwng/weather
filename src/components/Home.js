@@ -50,7 +50,9 @@ towns.map( town => {
     }
 );
 
-console.log(townslist)
+console.log(JSON.stringify(townslist));
+
+// {}
 
 console.log(townslist.Feodosiya);
 console.log(townslist['Feodosiya']);
