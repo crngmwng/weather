@@ -6,8 +6,8 @@ const Townslist = ({ townslist={}, towns=[] }) => {
     return(
         <div className="d-flex justify-content-around flex-wrap">                  
                 {towns.map((town, key) =>
-                    <Town key={[town.data.city_name]}
-                    town={townslist[town]} />
+                    <Town key={town}
+                    {...townslist[town]} />
                     )
                 }
                     <Dashboard />

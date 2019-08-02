@@ -46,11 +46,30 @@ let townslist = new Object();
 towns.map( town => {
     fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => townslist[`${town}`] = json);
+    .then(json => townslist[town] = json);
     }
 );
 
 console.log(townslist)
+
+
+// Feodosiya:
+// count: 1
+// data: [{…}]
+// __proto__: Object
+// Kerch:
+// count: 1
+// data: [{…}]
+// __proto__: Object
+// Sudak:
+// count: 1
+// data: [{…}]
+// __proto__: Object
+// Yalta:
+// count: 1
+// data: [{…}]
+// __proto__: Object
+// __proto__: Object
 
 
 const Home = () => {
