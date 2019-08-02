@@ -50,7 +50,9 @@ towns.map(town => {
     }
 )
 
-console.log(townslist)
+console.log(townslist[0][0])
+
+// Uncaught TypeError: Cannot read property '0' of undefined
 
 // []
 // 0: Array(1)
