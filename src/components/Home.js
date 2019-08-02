@@ -50,31 +50,10 @@ towns.map( town => {
     }
 );
 
-console.log(JSON.stringify(townslist));
 
-// {}
-
-console.log(townslist.Feodosiya);
-console.log(townslist['Feodosiya']);
-
-// Feodosiya:
-// count: 1
-// data: [{…}]
-// __proto__: Object
-// Kerch:
-// count: 1
-// data: [{…}]
-// __proto__: Object
-// Sudak:
-// count: 1
-// data: [{…}]
-// __proto__: Object
-// Yalta:
-// count: 1
-// data: [{…}]
-// __proto__: Object
-// __proto__: Object
-
+for (let key in townslist) {
+    console.log(townslist[key]);
+}
 
 const Home = () => {
     return(

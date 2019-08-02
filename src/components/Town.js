@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Town.css'
 
 const Town = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
             <div className="list" ><Link to={`/${props.title}`}>{props.title} </Link>
                 <div className="row block align-items-center"> 
