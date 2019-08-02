@@ -46,9 +46,11 @@ let townslist = new Object();
 
     fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
     .then(res => res.json())
-    .then(json => console.log(Object.keys(json)))
+    .then(json => console.log(json.data))
 
-    // (2) ["data", "count"]
+    // Array(1)
+    // 0: {rh: 60, pod: "d", lon: 34.97471, pres: 1009.87, timezone: "Europe/Simferopol", …}
+    // length: 1
 
 const Home = () => {
     return(
