@@ -52,6 +52,8 @@ towns.map( town => {
 
 console.log(townslist)
 
+console.log(townslist.Feodosiya);
+console.log(townslist['Feodosiya']);
 
 // Feodosiya:
 // count: 1
