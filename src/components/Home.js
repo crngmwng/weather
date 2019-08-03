@@ -43,43 +43,34 @@ import { arrayExpression } from '@babel/types';
 let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
 let townslist = [];
 
-towns.map(town => {
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-    .then(res => res.json())
-    .then(json => townslist.push(json.data));
-    }
-)
+let a, b, c, d;
+fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
+.then(res => res.json())
+.then(json => a = json.data);
 
-console.log(townslist[0][0])
 
-// Uncaught TypeError: Cannot read property '0' of undefined
+fetch(`https://api.weatherbit.io/v2.0/current?city=Yalta&key=ced73555abfb464ebcb5d7e77f5be270`)
+.then(res => res.json())
+.then(json => b = json.data)
 
-// []
-// 0: Array(1)
-// 0: {rh: 62, pod: "d", lon: 34.97471, pres: 1009.44, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// 1: Array(1)
-// 0: {rh: 44, pod: "d", lon: 37.27365, pres: 1008, timezone: "Europe/Kiev", …}
-// length: 1
-// __proto__: Array(0)
-// 2: Array(1)
-// 0: {rh: 41, pod: "d", lon: 36.47429, pres: 1003.55, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// 3: Array(1)
-// 0: {rh: 60, pod: "d", lon: 35.37789, pres: 1000.53, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// length: 4
-// __proto__: Array(0)
 
-console.log(Object.keys(townslist));
+fetch(`https://api.weatherbit.io/v2.0/current?city=Kerch&key=ced73555abfb464ebcb5d7e77f5be270`)
+.then(res => res.json())
+.then(json => c = json.data)
 
-// []
-// length: 0
-// __proto__: Array(0)
 
+fetch(`https://api.weatherbit.io/v2.0/current?city=Feodosiya&key=ced73555abfb464ebcb5d7e77f5be270`)
+.then(res => res.json())
+.then(json => d = json.data);
+
+townslist.push(a);
+townslist.push(b);
+townslist.push(c);
+townslist.push(d);
+
+console.log(townslist)
+
+// (4) [undefined, undefined, undefined, undefined]
 
 const Home = () => {
     return(
