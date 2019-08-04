@@ -39,40 +39,39 @@ import { arrayExpression } from '@babel/types';
 //     }
 // ]
 
-
-let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
-let townslist = [];
-
-let a, b, c, d;
-fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
-.then(res => res.json())
-.then(json => a = json.data);
-
-
-fetch(`https://api.weatherbit.io/v2.0/current?city=Yalta&key=ced73555abfb464ebcb5d7e77f5be270`)
-.then(res => res.json())
-.then(json => b = json.data)
-
-
-fetch(`https://api.weatherbit.io/v2.0/current?city=Kerch&key=ced73555abfb464ebcb5d7e77f5be270`)
-.then(res => res.json())
-.then(json => c = json.data)
-
-
-fetch(`https://api.weatherbit.io/v2.0/current?city=Feodosiya&key=ced73555abfb464ebcb5d7e77f5be270`)
-.then(res => res.json())
-.then(json => d = json.data);
-
-townslist.push(a);
-townslist.push(b);
-townslist.push(c);
-townslist.push(d);
-
-console.log(townslist)
-
-// (4) [undefined, undefined, undefined, undefined]
-
 const Home = () => {
+
+    let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
+    let townslist = [];
+
+    let a, b, c, d;
+    fetch(`https://api.weatherbit.io/v2.0/current?city=Sudak&key=ced73555abfb464ebcb5d7e77f5be270`)
+    .then(res => res.json())
+    .then(json => a = json.data)
+    .then(a => console.log(a))
+
+
+    fetch(`https://api.weatherbit.io/v2.0/current?city=Yalta&key=ced73555abfb464ebcb5d7e77f5be270`)
+    .then(res => res.json())
+    .then(json => b = json.data)
+
+
+    fetch(`https://api.weatherbit.io/v2.0/current?city=Kerch&key=ced73555abfb464ebcb5d7e77f5be270`)
+    .then(res => res.json())
+    .then(json => c = json.data)
+
+
+    fetch(`https://api.weatherbit.io/v2.0/current?city=Feodosiya&key=ced73555abfb464ebcb5d7e77f5be270`)
+    .then(res => res.json())
+    .then(json => d = json.data);
+
+    townslist.push(a);
+    townslist.push(b);
+    townslist.push(c);
+    townslist.push(d);
+
+    console.log(townslist)
+
     return(
             <div className="page">
                 <Navbar /> 
