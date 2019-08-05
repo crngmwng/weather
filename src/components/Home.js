@@ -60,27 +60,8 @@ const pushToArr = (townslist, data) => {
 }
 
 
-console.log(createTownslist(towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"], townslist=[]));
+console.log(createTownslist( ["Sudak", "Yalta", "Kerch", "Feodosiya"], []));
 
-
-// 0: Array(1)
-// 0: {rh: 63, pod: "n", lon: 34.97471, pres: 1007.82, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// 1: Array(1)
-// 0: {rh: 52, pod: "d", lon: 37.27365, pres: 1009.39, timezone: "Europe/Kiev", …}
-// length: 1
-// __proto__: Array(0)
-// 2: Array(1)
-// 0: {rh: 39, pod: "d", lon: 36.47429, pres: 1006.21, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// 3: Array(1)
-// 0: {rh: 33, pod: "d", lon: 35.37789, pres: 1002.99, timezone: "Europe/Simferopol", …}
-// length: 1
-// __proto__: Array(0)
-// length: 4
-// __proto__: Array(0)
 
     return(
             <div className="page">
