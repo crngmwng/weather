@@ -60,12 +60,8 @@ const pushToArr = (townslist, data) => {
 }
 
 
-console.log(createTownslist(towns, townslist));
+console.log(createTownslist(towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"], townslist=[]));
 
-// Line 63:  'towns' is not defined      no-undef
-// Line 63:  'townslist' is not defined  no-undef
-// Line 91:  'towns' is not defined      no-undef
-// Line 91:  'townslist' is not defined  no-undef
 
 // 0: Array(1)
 // 0: {rh: 63, pod: "n", lon: 34.97471, pres: 1007.82, timezone: "Europe/Simferopol", …}
