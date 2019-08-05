@@ -41,11 +41,11 @@ import { arrayExpression } from '@babel/types';
 
 const Home = () => {
 
+    
+    const createTownslist = () => {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
     var townslist = [];
-
-const createTownslist = (town, townslist) => {
-    towns.map( (town, townslist) => {
+    towns.map( (town) => {
         fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
         .then(json => pushToArr(json.data, townslist))
@@ -59,10 +59,13 @@ const pushToArr = (townslist, data) => {
     townslist.push(data);
 }
 
-// []length: 0__proto__: Array(0)
 
+console.log(createTownslist(towns, townslist));
 
-console.log(townslist)
+// Line 63:  'towns' is not defined      no-undef
+// Line 63:  'townslist' is not defined  no-undef
+// Line 91:  'towns' is not defined      no-undef
+// Line 91:  'townslist' is not defined  no-undef
 
 // 0: Array(1)
 // 0: {rh: 63, pod: "n", lon: 34.97471, pres: 1007.82, timezone: "Europe/Simferopol", …}
