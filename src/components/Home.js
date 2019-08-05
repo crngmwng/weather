@@ -59,7 +59,7 @@ const pushToArr = (townslist, data) => {
     townslist.push(data);
 }
 
-// []]length: 0__proto__: Array(0)
+// []length: 0__proto__: Array(0)
 
 
 console.log(townslist)
