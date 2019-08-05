@@ -44,7 +44,7 @@ const Home = () => {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
     var townslist = [];
 
-// const townslistfunc = () => {
+const createTownslist = (town, townslist) => {
     towns.map( (town, townslist) => {
         fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
@@ -52,7 +52,7 @@ const Home = () => {
         return townslist;
         }
     )
-// }
+}
 
 
 const pushToArr = (townslist, data) => {
@@ -90,7 +90,7 @@ console.log(townslist)
 
                 <div className="home-container">
                     <Container>
-                        <Townslist townslist={townslist} towns={towns} />
+                        <Townslist townslist={createTownslist(towns, townslist)} towns={towns} />
                     </Container>
                 </div>  
                     <Footer />
