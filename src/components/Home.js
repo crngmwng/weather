@@ -46,7 +46,8 @@ const Home = () => {
 
 towns.map( town => {
     fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-    .then(res => pushToArr(res.json()))
+    .then(res => res.json())
+    .then(json => pushToArr(json.data))
     }
 )
 
@@ -55,15 +56,12 @@ const pushToArr = (data) => {
     townslist.push(data);
 }
 
-// 0: Promise
-// __proto__: Promise
-// [[PromiseStatus]]: "resolved"
-// [[PromiseValue]]: Object
-// count: 1
-// data: [{…}]
-// __proto__: Object
+console.log(townslist)
 
-    console.log(townslist)
+// 0: Array(1)
+// 0: {rh: 63, pod: "n", lon: 34.97471, pres: 1007.82, timezone: "Europe/Simferopol", …}
+// length: 1
+// __proto__: Array(0)
 
     return(
             <div className="page">
