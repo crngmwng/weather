@@ -70,7 +70,7 @@ console.log(createTownslist( ["Sudak", "Yalta", "Kerch", "Feodosiya"], []));
 
                 <div className="home-container">
                     <Container>
-                        <Townslist townslist={createTownslist(towns, townslist)} towns={towns} />
+                        <Townslist townslist={createTownslist(["Sudak", "Yalta", "Kerch", "Feodosiya"], [])} towns={["Sudak", "Yalta", "Kerch", "Feodosiya"]} />
                     </Container>
                 </div>  
                     <Footer />
