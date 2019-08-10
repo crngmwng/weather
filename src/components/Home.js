@@ -44,11 +44,11 @@ const Home = () => {
     
     const createTownslist = () => {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
-    var townslist = [];
+    var townslist = {};
         towns.map( (town) => {
             fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
             .then(res => res.json())
-            .then(json => pushToArr( townslist, json.data))
+            .then(json => townslist[town] = json.data)
             }
         )
         return townslist;
@@ -60,27 +60,26 @@ const Home = () => {
     }
 
 
-    console.log(createTownslist()["0"]);
+    console.log(createTownslist());
 
-    // []
-    // 0: Array(1)
-    //     0: {rh: 53, pod: "d", lon: 34.97471, pres: 1012.88, timezone: "Europe/Simferopol", …}
-    // length: 1
-    // __proto__: Array(0)
-    // 1: Array(1)
-    //     0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
-    // length: 1
-    // __proto__: Array(0)
-    // 2: Array(1)
-    //     0: {rh: 58, pod: "d", lon: 36.47429, pres: 1007.42, timezone: "Europe/Simferopol", …}
-    // length: 1
-    // __proto__: Array(0)
-    // 3: Array(1)
+    // Object
+    // Feodosiya: Array(1)
     //     0: {rh: 58, pod: "d", lon: 35.37789, pres: 1004.02, timezone: "Europe/Simferopol", …}
-    // length: 1
-    // __proto__: Array(0)
-    // length: 4
-    // __proto__: Array(0)
+    //     length: 1
+    //     __proto__: Array(0)
+    // Kerch: Array(1)
+    //     0: {rh: 58, pod: "d", lon: 36.47429, pres: 1007.42, timezone: "Europe/Simferopol", …}
+    //     length: 1
+    //     __proto__: Array(0)
+    // Sudak: Array(1)
+    //     0: {rh: 53, pod: "d", lon: 34.97471, pres: 1012.88, timezone: "Europe/Simferopol", …}
+    //     length: 1
+    //     __proto__: Array(0)
+    // Yalta: Array(1)
+    //     0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
+    //     length: 1
+    //     __proto__: Array(0)
+    // __proto__: Object
 
     return(
             <div className="page">
