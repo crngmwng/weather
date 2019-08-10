@@ -48,7 +48,7 @@ const Home = () => {
         towns.map( (town) => {
             fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
             .then(res => res.json())
-            .then(json => townslist[town] = json.data)
+            .then(json => townslist[town] = json.data[0])
             }
         )
         return townslist;
@@ -60,25 +60,14 @@ const Home = () => {
     }
 
 
+    console.log(createTownslist());
     console.log(createTownslist()['Sudak']);
 
     // Object
-    // Feodosiya: Array(1)
-    //     0: {rh: 58, pod: "d", lon: 35.37789, pres: 1004.02, timezone: "Europe/Simferopol", …}
-    //     length: 1
-    //     __proto__: Array(0)
-    // Kerch: Array(1)
-    //     0: {rh: 58, pod: "d", lon: 36.47429, pres: 1007.42, timezone: "Europe/Simferopol", …}
-    //     length: 1
-    //     __proto__: Array(0)
-    // Sudak: Array(1)
-    //     0: {rh: 53, pod: "d", lon: 34.97471, pres: 1012.88, timezone: "Europe/Simferopol", …}
-    //     length: 1
-    //     __proto__: Array(0)
-    // Yalta: Array(1)
-    //     0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
-    //     length: 1
-    //     __proto__: Array(0)
+    // Feodosiya: {rh: 58, pod: "d", lon: 35.37789, pres: 1004.02, timezone: "Europe/Simferopol", …}
+    // Kerch: {rh: 58, pod: "d", lon: 36.47429, pres: 1007.42, timezone: "Europe/Simferopol", …}
+    // Sudak: {rh: 53, pod: "d", lon: 34.97471, pres: 1012.88, timezone: "Europe/Simferopol", …}
+    // Yalta: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
     // __proto__: Object
 
     return(
