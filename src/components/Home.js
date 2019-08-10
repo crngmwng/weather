@@ -49,7 +49,7 @@ const Home = () => {
             fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
             .then(res => res.json())
             .then(json => pushToArr( townslist, json.data))
-        }
+            }
         )
         return townslist;
     }
@@ -60,7 +60,7 @@ const Home = () => {
     }
 
 
-    console.log(createTownslist()[0]);
+    console.log(createTownslist()["0"]);
 
     // []
     // 0: Array(1)
