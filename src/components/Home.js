@@ -45,22 +45,28 @@ const Home = () => {
     const createTownslist = () => {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
     var townslist = [];
-    towns.map( (town) => {
-        fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-        .then(res => res.json())
-        .then(json => pushToArr( townslist, json.data))
-        return townslist;
+        towns.map( (town) => {
+            fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+            .then(res => res.json())
+            .then(json => pushToArr( townslist, json.data))
         }
-    )
-}
+        )
+        return townslist;
+    }
 
 
-const pushToArr = (townslist, data) => {
-    townslist.push(data);
-}
+    const pushToArr = (townslist, data) => {
+        townslist.push(data);
+    }
 
 
-console.log(createTownslist());
+    console.log(createTownslist());
+
+    // Array(4)
+    // 0: Array(1)
+    // 0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
+    // length: 1
+    // __proto__: Array(0)
 
     return(
             <div className="page">
