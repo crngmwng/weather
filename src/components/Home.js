@@ -60,7 +60,7 @@ const Home = () => {
     }
 
 
-    console.log(createTownslist());
+    console.log(createTownslist()['Sudak']);
 
     // Object
     // Feodosiya: Array(1)
