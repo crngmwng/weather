@@ -60,12 +60,26 @@ const Home = () => {
     }
 
 
-    console.log(createTownslist());
+    console.log(createTownslist()[0]);
 
-    // Array(4)
+    // []
     // 0: Array(1)
-    // 0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
+    //     0: {rh: 53, pod: "d", lon: 34.97471, pres: 1012.88, timezone: "Europe/Simferopol", …}
     // length: 1
+    // __proto__: Array(0)
+    // 1: Array(1)
+    //     0: {rh: 60, pod: "d", lon: 37.27365, pres: 1010.01, timezone: "Europe/Kiev", …}
+    // length: 1
+    // __proto__: Array(0)
+    // 2: Array(1)
+    //     0: {rh: 58, pod: "d", lon: 36.47429, pres: 1007.42, timezone: "Europe/Simferopol", …}
+    // length: 1
+    // __proto__: Array(0)
+    // 3: Array(1)
+    //     0: {rh: 58, pod: "d", lon: 35.37789, pres: 1004.02, timezone: "Europe/Simferopol", …}
+    // length: 1
+    // __proto__: Array(0)
+    // length: 4
     // __proto__: Array(0)
 
     return(
