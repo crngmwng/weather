@@ -60,8 +60,7 @@ const pushToArr = (townslist, data) => {
 }
 
 
-console.log(createTownslist([], ["Sudak", "Yalta", "Kerch", "Feodosiya"]));
-
+console.log(createTownslist());
 
     return(
             <div className="page">
