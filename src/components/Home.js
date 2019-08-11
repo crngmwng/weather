@@ -45,7 +45,7 @@ const Home = () => {
     function createTownslist() {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
     var townslist = {};
-        towns.map( (town) => {
+        towns.forEach(town => {
             fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
             .then(res => res.json())
             .then(json => townslist[town] = json.data[0])
