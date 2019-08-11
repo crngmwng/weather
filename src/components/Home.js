@@ -42,7 +42,7 @@ import { arrayExpression } from '@babel/types';
 const Home = () => {
 
     
-    const createTownslist = () => {
+    function createTownslist() {
     var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
     var townslist = {};
         towns.map( (town) => {
@@ -53,18 +53,15 @@ const Home = () => {
         )
         return townslist;
     }
+    
+    console.log(createTownslist());
 
-
-    const pushToArr = (townslist, data) => {
-        townslist.push(data);
-    }
-
-
-    console.log(Object.keys(createTownslist()));
-
-    // Array(0)
-    // length: 0
-    // __proto__: Array(0)
+//     {}
+//      Feodosiya: {rh: 45, pod: "d", lon: 35.37789, pres: 1008.48, timezone: "Europe/Simferopol", …}
+//      Kerch: {rh: 49, pod: "d", lon: 36.47429, pres: 1011.7, timezone: "Europe/Simferopol", …}
+//      Sudak: {rh: 42, pod: "d", lon: 34.97471, pres: 1017.46, timezone: "Europe/Simferopol", …}
+//      Yalta: {rh: 46, pod: "d", lon: 37.27365, pres: 1016.05, timezone: "Europe/Kiev", …}
+//      __proto__: Object
 
     return(
             <div className="page">
