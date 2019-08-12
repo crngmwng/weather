@@ -54,7 +54,8 @@ const Home = () => {
         return townslist;
     }
     
-    console.log(createTownslist());
+    let a = createTownslist();
+    console.log(a);
     console.log(Object.keys(createTownslist()));
 
 //     {}
