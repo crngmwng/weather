@@ -56,7 +56,7 @@ const Home = () => {
     
     let a = createTownslist();
     console.log(a);
-    console.log(Object.keys(createTownslist()));
+    console.log(Object.keys(a));
 
 //     {}
 //      Feodosiya: {rh: 45, pod: "d", lon: 35.37789, pres: 1008.48, timezone: "Europe/Simferopol", …}
