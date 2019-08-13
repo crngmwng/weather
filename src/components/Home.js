@@ -42,33 +42,42 @@ import { arrayExpression } from '@babel/types';
 const Home = () => {
 
     
-    function createTownslist() {
-    var towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
-    var townslist = {};
-        towns.forEach(town => {
-            fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-            .then(res => res.json())
-            .then(json => townslist[town] = json.data[0])
-            }
-        )
-        return townslist;
-    }
+    // function createTownslist() {
+    // let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
+    // let townslist = {};
+    //     towns.forEach(town => {
+    //         fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+    //         .then(res => res.json())
+    //         .then(json => townslist[town] = json.data[0])
+    //         }
+    //     )
+    //     return townslist;
+    // }
     
-    let a = createTownslist();
-    console.log(a);
-    console.log(Object.keys(a));
-
-//     {}
-//      Feodosiya: {rh: 45, pod: "d", lon: 35.37789, pres: 1008.48, timezone: "Europe/Simferopol", …}
-//      Kerch: {rh: 49, pod: "d", lon: 36.47429, pres: 1011.7, timezone: "Europe/Simferopol", …}
-//      Sudak: {rh: 42, pod: "d", lon: 34.97471, pres: 1017.46, timezone: "Europe/Simferopol", …}
-//      Yalta: {rh: 46, pod: "d", lon: 37.27365, pres: 1016.05, timezone: "Europe/Kiev", …}
-//      __proto__: Object
+    // console.log(createTownslist());
 
 
-//      Array(0)
-//      length: 0
-//      __proto__: Array(0)
+    function createTownslist() {
+        let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
+        return Promise.all(
+          towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+            .then(res => res.json())
+            .then(json => json.data))
+        )
+          .then(response => {
+            return towns.reduce((acc, town, i) => {
+              acc[town] = response[i]
+              return acc
+            }, {})
+          })
+      }
+      
+      createTownslist().then(towns => console.log(Object.keys(towns), towns));
+      
+      (async function () {
+        const towns = await createTownslist()
+        console.log(Object.keys(towns), towns)
+      })()
 
 
 
