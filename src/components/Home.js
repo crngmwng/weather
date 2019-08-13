@@ -80,6 +80,21 @@ const Home = () => {
       })()
 
 
+    //   Array(4)
+    //   0: "Sudak"
+    //   1: "Yalta"
+    //   2: "Kerch"
+    //   3: "Feodosiya"
+    //   length: 4
+    //   __proto__: Array(0)
+// 
+// 
+    //   Object
+        // Feodosiya: [{…}]
+        // Kerch: [{…}]
+        // Sudak: [{…}]
+        // Yalta: [{…}]
+        // __proto__: Object
 
     return(
             <div className="page">
