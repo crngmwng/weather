@@ -20,18 +20,59 @@ class Home extends Component  {
     } 
 
     componentDidMount() {
-        let a = [];
-        this.state.towns.map(town => {
-            fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-            .then(res => res.json())
-            .then(json => a.push(json))
-            }
-        )
 
-        this.setState({
-            townslist: a
-        });
+        function func(data) {
+            let list = [];
+            list.push(data);
+            return list
+        }
         
+        async function delayedLog(item) {
+            let res = await fetch(`https://api.weatherbit.io/v2.0/current?city=${item}&key=ced73555abfb464ebcb5d7e77f5be270`);
+            let json = await res.json();
+            let data = await json.data[0];
+            await func(data);
+        }
+        async function processArray(array) {
+            for (const item of array) {
+              await delayedLog(item);
+            }
+        }
+          
+        processArray(this.state.towns)
+
+
+
+        // async function createTownslist(arr = []) {
+        //     for (const town of arr) {
+        //         let res = await fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`);
+        //         let json = await res.json();
+        //         let data = await json.data[0];
+        //         return data
+        //         }
+        // }
+
+        // async function main() {
+        //     let town = await createTownslist(towns);
+        //     console.log(town)
+        // }
+
+        // main()
+
+
+        // let a = [];
+        // this.state.towns.map(town => {
+        //     fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+        //     .then(res => res.json())
+        //     .then(json => a.push(json.data[0]))
+        //     }
+        // )
+        
+        // console.log(a);
+        // this.setState({
+        //     townslist: a
+        // });
+        // console.log(this.state)
     }
 
 
