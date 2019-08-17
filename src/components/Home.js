@@ -23,22 +23,14 @@ class Home extends Component{
         this.state.towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
         .then(json => this.setState({...this.state,
-                                    this.state.townslist: townslist.push(json.data[0])}))
+                                    townslist: this.state.townslist.push(json.data[0])}))
             )
     }
 
     render() {
         console.log(this.state.townslist)
-
-    //     Line 26:  Parsing error: Unexpected keyword 'this'
-
-    //     24 |         .then(res => res.json())
-    //     25 |         .then(json => this.setState({...this.state,
-    //   > 26 |                                     this.state.townslist: townslist.push(json.data[0])}))
-    //        |                                     ^
-    //     27 |             )
-    //     28 |     }
-    //     29 | 
+        
+        // Unhandled Rejection (TypeError): this.state.townslist.push is not a function
 
         return(
                 <div className="page">
