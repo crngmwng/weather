@@ -29,7 +29,18 @@ class Home extends Component{
     }
 
     render() {
-        // console.log(this.state.townslist)
+        console.log(this.state.townslist)
+
+        // []
+        // length: 0
+        // __proto__: Array(0)
+        
+        // {rh: 42, pod: "d", lon: 34.97471, pres: 1010.51, timezone: "Europe/Simferopol", …}
+        // {rh: 67, pod: "d", lon: 36.47429, pres: 1004.75, timezone: "Europe/Simferopol", …}
+        // {rh: 70, pod: "d", lon: 37.27365, pres: 1007.41, timezone: "Europe/Kiev", …}
+        // {rh: 48, pod: "d", lon: 35.37789, pres: 1001.88, timezone: "Europe/Simferopol", …}
+
+
         return(
                 <div className="page">
                     <Navbar /> 
