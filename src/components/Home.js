@@ -20,10 +20,10 @@ class Home extends Component{
 
     componentDidMount() {
 
-        this.state.towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+        this.state.towns.forEach(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
         .then(json => this.setState({...this.state,
-                                    townslist: {...this.state.townslist, ...json.data[0]}
+                                    townslist: {...this.state.townslist, { town: json.data[0]} }
                                 })
             )
         )
@@ -32,11 +32,15 @@ class Home extends Component{
     render() {
         console.log(this.state.townslist)
 
-        // {}
-        // {rh: 38, pod: "d", lon: 34.97471, pres: 1010.24, timezone: "Europe/Simferopol", …}
-        // {rh: 60, pod: "d", lon: 36.47429, pres: 1004.72, timezone: "Europe/Simferopol", …}
-        // {rh: 63, pod: "d", lon: 37.27365, pres: 1007.1, timezone: "Europe/Kiev", …}
-        // {rh: 45, pod: "d", lon: 35.37789, pres: 1001.59, timezone: "Europe/Simferopol", …}
+    //     Line 26:  Parsing error: Unexpected token
+
+    //     24 |         .then(res => res.json())
+    //     25 |         .then(json => this.setState({...this.state,
+    //   > 26 |                                     townslist: {...this.state.townslist, {town: ...json.data[0]} }
+    //        |                                                                          ^
+    //     27 |                                 })
+    //     28 |             )
+    //     29 |         )
 
         return(
                 <div className="page">
