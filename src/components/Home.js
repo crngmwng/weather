@@ -23,25 +23,15 @@ class Home extends Component{
         this.state.towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
         .then(json => this.setState({...this.state,
-                                    townslist.push(json.data[0])})
+                                    townslist: townslist.push(json.data[0])}))
             )
-        )
     }
 
     render() {
         console.log(this.state.townslist)
-// 
-        // Line 26:  Parsing error: Unexpected token, expected ","
-// 
-        // 24 |         .then(res => res.json())
-        // 25 |         .then(json => this.setState({...this.state,
-    //   > 26 |                                     townslist.push(json.data[0]}))
-        //    |                                              ^
-        // 27 |             )
-        // 28 |         )
-        // 29 |     }
-// 
-// 
+
+        // Line 26:  'townslist' is not defined  no-undef
+
         return(
                 <div className="page">
                     <Navbar /> 
