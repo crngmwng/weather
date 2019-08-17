@@ -9,30 +9,27 @@ import { Container } from 'react-bootstrap';
 import { arrayExpression } from '@babel/types';
 
 
-const Home = () => {
-    function createTownslist() {
-        let towns = ["Sudak", "Yalta", "Kerch", "Feodosiya"];
-        return Promise.all(
-          towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
-            .then(res => res.json())
-            .then(json => json.data))
+class Home extends Component{ 
+    constructor(props) {
+        super(props)
+        this.state = {
+            towns: ["Sudak", "Yalta", "Kerch", "Feodosiya"],
+            townslist: []
+        }
+    }
+
+    componentDidMount() {
+
+        this.state.towns.map(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
+        .then(res => res.json())
+        .then(json => this.setState({...this.state,
+                                    townslist: json.data[0]})
+            )
         )
-          .then(response => {
-            return towns.reduce((acc, town, i) => {
-              acc[town] = response[i]
-              return acc
-            }, {})
-          })
-      }
-      
-      // createTownslist().then(towns => console.log(Object.keys(towns), towns));
-      
-      (async function () {
-        const towns = await createTownslist()
-        console.log(Object.keys(towns), towns)
-      })()
+    }
 
-
+    render() {
+        // console.log(this.state.townslist)
         return(
                 <div className="page">
                     <Navbar /> 
@@ -40,11 +37,12 @@ const Home = () => {
 
                     <div className="home-container">
                         <Container>
-                            <Townslist />
+                            <Townslist townslist={this.state.townslist}/>
                         </Container>
                     </div>  
                         <Footer />
                 </div>
         )
+    }
 }
 export default Home
