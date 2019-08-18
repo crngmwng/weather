@@ -23,7 +23,7 @@ class Home extends Component{
         this.state.towns.forEach(town => fetch(`https://api.weatherbit.io/v2.0/current?city=${town}&key=ced73555abfb464ebcb5d7e77f5be270`)
         .then(res => res.json())
         .then(json => this.setState({...this.state,
-                                    townslist: {...this.state.townslist, { town: json.data[0]} }
+                                    townslist: {...this.state.townslist, { townslist: json.data[0]} }
                                 })
             )
         )
