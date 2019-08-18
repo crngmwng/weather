@@ -36,7 +36,7 @@ class Home extends Component{
 
     //     24 |         .then(res => res.json())
     //     25 |         .then(json => this.setState({...this.state,
-    //   > 26 |                                     townslist: {...this.state.townslist, {town: ...json.data[0]} }
+    //   > 26 |                                     townslist: {...this.state.townslist, {townslist: ...json.data[0]} }
     //        |                                                                          ^
     //     27 |                                 })
     //     28 |             )
